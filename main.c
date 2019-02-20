@@ -1,63 +1,11 @@
-#include "linalg.h"
+	#include "linalg.h"
+	#include <stdio.h>
 int main(void)
-{
-	double n=1;
-	_startTimer();
-	printf("Loading file..");
-	printf(" %e entries detected.. ",n);
-	matrix *mat=_constructMatrix(1,1,constructInputData("pyinput11.txt"));
-	printf(" complete.\n");
-	_stopTimer();
-	_startTimer();
-	printf("Applying REF..");
-	printf(" %e entries detected.. ",n);
-	_REFreal(mat);
-	printf(" complete.\n");
-	_stopTimer();
-	free(mat);
-	n*=100;
-	_startTimer();
-	printf("Loading file..");
-	printf(" %e entries detected.. ",n);
-	mat=_constructMatrix(10,10,constructInputData("pyinput1010.txt"));
-	printf(" complete.\n");
-	_stopTimer();
-	_startTimer();
-	printf("Applying REF..");
-	printf(" %e entries detected.. ",n);
-	_REFreal(mat);
-	printf(" complete.\n");
-	_stopTimer();
-	free(mat);
-	n*=100;
-	_startTimer();
-	printf("Loading file..");
-	printf(" %e entries detected.. ",n);
-	mat=_constructMatrix(100,100,constructInputData("pyinput100100.txt"));
-	printf(" complete.\n");
-	_stopTimer();
-	_startTimer();
-	printf("Applying REF..");
-	printf(" %e entries detected.. ",n);
-	_REFreal(mat);
-	printf(" complete.\n");
-	_stopTimer();
-	free(mat);
-	n*=100;
-	_startTimer();
-	printf("Loading file..");
-	printf(" %e entries detected.. ",n);
-	mat=_constructMatrix(1000,1000,constructInputData("pyinput10001000.txt"));
-	printf(" complete.\n");
-	_stopTimer();
-	_startTimer();
-	printf("Applying REF..");
-	printf(" %e entries detected.. ",n);
-	_REFreal(mat);
-	printf(" complete.\n");
-	_stopTimer();
-	free(mat);
-	n*=100;
+{ 
+	Mat mat=newMat(3,3);
+	setMatFile(mat,fpath("33.txt"));
+	printMat(mat);
+	MatREF(mat);
+	printMat(mat);
 
-	return 0;
 }
